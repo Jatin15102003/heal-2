@@ -1,0 +1,434 @@
+/* General Styles */
+/* Define variables for light and dark themes */
+:root {
+  --background-color-light: #f0f0f0; /* Light mode background */
+  --text-color-light: #111; /* Light mode text color */
+  --background-color-dark: #111; /* Dark mode background */
+  --text-color-dark: #f0f0f0; /* Dark mode text color */
+  --accent-color: #46c54c; /* Accent color */
+  --navbar-bg-light: #fff; /* Light mode navbar background */
+  --navbar-bg-dark: #121212; /* Dark mode navbar background */
+  --card-bg-light: #ffffff; /* Light mode card background */
+  --card-bg-dark: #1d1d1d; /* Dark mode card background */
+  --hero-bg-light: #f9f9f9; /* Light mode hero background */
+  --hero-bg-dark: #181818; /* Dark mode hero background */
+  --footer-bg-light: #e0e0e0; /* Light mode footer background */
+  --footer-bg-dark: #1a1a1a; /* Dark mode footer background */
+  --about-bg-light: #ffffff; /* Light mode about background */
+  --about-bg-dark: #1d1d1d; /* Dark mode about background */
+  --contact-bg-light: #ffffff; /* Light mode contact background */
+  --contact-bg-dark: #1d1d1d; /* Dark mode contact background */
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color-dark); /* Default Dark mode */
+  color: var(--text-color-dark);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+/* Light mode styles */
+body.light {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+body.light .navbar {
+  background-color: var(--navbar-bg-light);
+  color: var(--text-color-light);
+}
+
+body.light .cta-button,
+body.light .cta-login-button {
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+}
+
+body.light .hero {
+  background-color: var(--hero-bg-light);
+  color: var(--text-color-light);
+}
+
+body.light .home-card,
+body.light .feature-card,
+body.dark .features-section,
+body.light .about-section,
+body.light .home-dashboard-section,
+body.light .home-dashboard-cards,
+body.light .contact-section {
+  background-color: white;
+  color: var(--text-color-light);
+}
+
+body.light .footer {
+  background-color: var(--footer-bg-light);
+  color: var(--text-color-light);
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark .navbar {
+  background-color: var(--navbar-bg-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark .cta-button,
+body.dark .cta-login-button {
+  background-color: var(--accent-color);
+  color: var(--text-color-dark);
+}
+
+body.dark .hero {
+  background-color: var(--hero-bg-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark .home-card,
+body.dark .feature-card,
+body.dark .features-section,
+body.dark .home-dashboard-cards,
+body.dark .about-section,
+body.dark .contact-section {
+  background-color: black;
+  color: var(--text-color-dark);
+}
+
+body.dark .footer {
+  background-color: var(--footer-bg-dark);
+  color: var(--text-color-dark);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  background-color: var(--navbar-bg-dark);
+  border-bottom: 2px solid var(--accent-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* CTA buttons */
+.cta {
+  display: flex;
+  gap: 15px;
+}
+
+.cta-button,
+.cta-login-button {
+  background-color: var(--accent-color);
+  color: #111;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover,
+.cta-login-button:hover {
+  background-color: #ffffff;
+  color: #111;
+}
+
+/* Theme toggle button */
+.theme-toggle-button {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.theme-toggle-button:hover {
+  color: #ffffff; /* Change color on hover for better visibility */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  padding: 0 60px;
+  background-color: var(--hero-bg-dark);
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+.cta-link {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #ffffff;
+  border: 2px solid var(--accent-color);
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+}
+
+.cta-link:hover {
+  background-color: var(--accent-color);
+  color: #111;
+}
+
+/* Dashboard Overview Section */
+.home-dashboard-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #111;
+}
+
+.home-dashboard-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Dashboard Cards Container */
+.home-dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.home-card {
+  background-color: var(--card-bg-dark);
+  padding: 40px;
+  border-radius: 15px;
+  width: 320px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-card:hover {
+  transform: scale(1.05);
+}
+
+.home-card h3 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.home-card p {
+  color: var(--text-color-dark);
+  margin-bottom: 20px;
+}
+
+.cta-card-button {
+  text-decoration: none;
+  background-color: var(--accent-color);
+  color: #111;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-card-button:hover {
+  background-color: #ffffff;
+  color: #111;
+}
+
+/* Features Section */
+.features-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Feature Cards */
+.features-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.feature-card {
+  background-color: var(--card-bg-dark);
+  padding: 40px;
+  border-radius: 15px;
+  width: 320px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-card h3 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: var(--text-color-dark);
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--about-bg-dark);
+  border-radius: 10px;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.about-section p {
+  color: var(--text-color-dark);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--contact-bg-dark);
+  border-radius: 10px;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.contact-section p {
+  color: var(--text-color-dark);
+  margin-bottom: 20px;
+}
+
+/* Contact Form Styles */
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-color-dark);
+}
+
+.contact-section button {
+  background-color: var(--accent-color);
+  color: #111;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.contact-section button:hover {
+  background-color: #ffffff;
+  color: #111;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--footer-bg-dark);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer p {
+  color: var(--text-color-dark);
+  margin: 10px 0;
+}
+
+.footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}

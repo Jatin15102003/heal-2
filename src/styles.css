@@ -1,0 +1,93 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #1a73e8;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.welcome-section {
+  background-color: #f0f8ff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+}
+
+.bed-availability {
+  padding: 1rem 2rem;
+  background-color: #e6f5f7;
+  text-align: center;
+}
+
+.bed-availability h3 {
+  font-size: 1.5rem;
+}
+
+.bed-availability ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bed-availability ul li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.services {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.services h3 {
+  text-align: center;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.service-card {
+  width: 30%;
+  padding: 1rem;
+  background-color: #e6f5f7;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.appointments {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1357a8;
+}
